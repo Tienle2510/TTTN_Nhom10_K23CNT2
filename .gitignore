@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+backend/.env
+frontend/.env
+
+*.log
+dist/
+build/
+
+.vscode/
+.idea/
+
+*.class

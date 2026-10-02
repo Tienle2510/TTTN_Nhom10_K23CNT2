@@ -1,0 +1,661 @@
+/* =========================================================
+   CREATE EMAIL
+   ========================================================= */
+
+.compose-page {
+    min-height: 100vh;
+    background: #f6f8fc;
+    color: #202124;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.compose-topbar {
+    height: 68px;
+
+    padding: 0 28px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 20;
+}
+
+.compose-top-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.compose-back {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+    color: #5f6368;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.compose-back:hover {
+    background: #f1f3f4;
+    color: #202124;
+}
+
+.compose-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.compose-title-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: #e8f0fe;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.compose-title div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.compose-title strong {
+    font-size: 16px;
+}
+
+.compose-title small {
+    color: #80868b;
+    font-size: 11px;
+}
+
+.compose-inbox-button {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    border: 1px solid #dadce0;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #3c4043;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.compose-inbox-button:hover {
+    background: #f8f9fa;
+    border-color: #c8ccd1;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.compose-main {
+    width: min(900px, calc(100% - 40px));
+
+    margin: 38px auto 60px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.compose-card {
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(
+            60,
+            64,
+            67,
+            0.08
+        );
+
+    overflow: hidden;
+}
+
+.compose-card-header {
+    padding: 26px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #edf0f2;
+}
+
+.compose-card-header > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.compose-card-header span {
+    color: #80868b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+.compose-card-header h1 {
+    margin: 0;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.gmail-status {
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    background: #e6f4ea;
+    color: #137333;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.gmail-status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #34a853;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.compose-success,
+.compose-error {
+    margin: 20px 30px 0;
+
+    padding: 12px 14px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.compose-success {
+    background: #e6f4ea;
+    color: #137333;
+}
+
+.compose-error {
+    background: #fce8e6;
+    color: #c5221f;
+}
+
+.compose-success span,
+.compose-error span {
+    width: 23px;
+    height: 23px;
+
+    flex: 0 0 23px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+.compose-success span {
+    background: #34a853;
+    color: white;
+}
+
+.compose-error span {
+    background: #d93025;
+    color: white;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.compose-form {
+    padding: 28px 30px 0;
+}
+
+.compose-field {
+    margin-bottom: 20px;
+}
+
+.compose-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #3c4043;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.compose-input-wrapper {
+    min-height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dadce0;
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.compose-input-wrapper > span {
+    font-size: 16px;
+}
+
+.compose-input-wrapper:focus-within {
+    border-color: #1a73e8;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            26,
+            115,
+            232,
+            0.12
+        );
+}
+
+.compose-input-wrapper input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #202124;
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.compose-input-wrapper input::placeholder {
+    color: #9aa0a6;
+}
+
+.compose-input-wrapper input:disabled {
+    cursor: not-allowed;
+}
+
+.compose-content-field textarea {
+    width: 100%;
+
+    min-height: 330px;
+
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    border: 1px solid #dadce0;
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: #202124;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    resize: vertical;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.compose-content-field textarea:focus {
+    border-color: #1a73e8;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            26,
+            115,
+            232,
+            0.12
+        );
+}
+
+.compose-content-field textarea::placeholder {
+    color: #9aa0a6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.compose-footer {
+    min-height: 82px;
+
+    margin-top: 10px;
+
+    border-top: 1px solid #edf0f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.compose-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.compose-info > span {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+    background: #f1f3f4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compose-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.compose-info strong {
+    color: #3c4043;
+
+    font-size: 12px;
+}
+
+.compose-info small {
+    color: #80868b;
+
+    font-size: 10px;
+}
+
+.compose-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.compose-cancel,
+.compose-send {
+    min-height: 42px;
+
+    padding: 0 17px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.2s,
+        border-color 0.2s;
+}
+
+.compose-cancel {
+    border: 1px solid #dadce0;
+
+    background: #ffffff;
+
+    color: #5f6368;
+}
+
+.compose-cancel:hover {
+    background: #f8f9fa;
+}
+
+.compose-send {
+    min-width: 125px;
+
+    border: 1px solid #1a73e8;
+
+    background: #1a73e8;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.compose-send:hover {
+    background: #1765c1;
+}
+
+.compose-send:active,
+.compose-cancel:active {
+    transform: translateY(1px);
+}
+
+.compose-send:disabled,
+.compose-cancel:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SPINNER
+   ========================================================= */
+
+.send-spinner {
+    width: 14px;
+    height: 14px;
+
+    border: 2px solid rgba(
+        255,
+        255,
+        255,
+        0.4
+    );
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation:
+        compose-spin 0.7s linear infinite;
+}
+
+@keyframes compose-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .compose-topbar {
+        height: 60px;
+        padding: 0 12px;
+    }
+
+    .compose-main {
+        width: calc(100% - 20px);
+
+        margin-top: 15px;
+    }
+
+    .compose-card {
+        border-radius: 15px;
+    }
+
+    .compose-card-header {
+        padding: 20px;
+
+        align-items: flex-start;
+    }
+
+    .compose-card-header h1 {
+        font-size: 20px;
+    }
+
+    .compose-form {
+        padding: 22px 20px 0;
+    }
+
+    .compose-success,
+    .compose-error {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .compose-footer {
+        padding: 18px 0;
+
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .compose-actions {
+        width: 100%;
+    }
+
+    .compose-cancel,
+    .compose-send {
+        flex: 1;
+    }
+
+    .compose-info small {
+        max-width: 220px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .compose-title small {
+        display: none;
+    }
+
+    .compose-inbox-button {
+        font-size: 0;
+
+        width: 40px;
+        padding: 0;
+    }
+
+    .compose-inbox-button::before {
+        content: "📥";
+
+        font-size: 16px;
+    }
+
+    .compose-card-header {
+        gap: 10px;
+    }
+
+    .gmail-status {
+        padding: 7px 9px;
+
+        font-size: 0;
+    }
+
+    .gmail-status-dot {
+        margin: 0;
+    }
+
+    .compose-content-field textarea {
+        min-height: 280px;
+    }
+
+}
